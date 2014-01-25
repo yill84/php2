@@ -4,8 +4,8 @@
 <body>
 
 	<?php 
-	$queue = $_GET["queue"];
-	$target = $_GET["target"];
+	$queue = $_POST["queue"];
+	$target = $_POST["target"];
 
 	$queueArray = explode("、", $queue);
 	echo "没有去重的总人数是".count($queueArray)."人<br/>";
