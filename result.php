@@ -8,21 +8,21 @@
 	$target = $_GET["target"];
 
 	$queueArray = explode("、", $queue);
-	echo "没有去重的总人数是 ".count($queueArray)."人<br/>";
+	echo "没有去重的总人数是".count($queueArray)."人<br/>";
 
-	echo "没有去重search：".array_search($target, $queueArray);
+// 	echo "没有去重search：".(array_search($target, $queueArray)+1);
 	
 	$queueArrayNoDup = array_unique($queueArray);
-	echo "去重的总人数是 ".count($queueArrayNoDup)."人<br/>";
+	echo "去重的总人数是".count($queueArrayNoDup)."人<br/>";
 
-	echo "去重search：".array_search($target, $queueArrayNoDup);
+// 	echo "去重search：".(array_search($target, $queueArrayNoDup)+1)."<br/>";
 	
 	$i=1;
 	foreach ($queueArrayNoDup as $name)
 	{
 		if(0 == strcasecmp($target, $name))
 		{
-			echo $target."排在第".$i."位";
+			echo $target."排在第".$i."位<br/>";
 		}
 		$i +=1;
 	}
