@@ -16,11 +16,11 @@
 			<p />
 			粘贴所有排队人员：
 			<textarea rows="3" cols="50" name="queue">
-				<?php $queue?>
+				<?php echo $queue?>
 			</textarea>
 			<br />
 			<p />
-			要查询序号的名称：<input name="target" type="text" value="<?php $test?>" />
+			要查询序号的名称：<input name="target" type="text" value="<?php echo $test?>" />
 			<br />
 			<p />
 			<input type="submit" value="查询" />
