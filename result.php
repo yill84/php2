@@ -22,7 +22,7 @@
 	{
 		if(0 == strcasecmp($target, $name))
 		{
-			echo $target."排在第".$i."位<br/>";
+			echo "\"".$target."\"排在第".$i."位<br/>";
 		}
 		$i +=1;
 	}
