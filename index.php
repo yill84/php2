@@ -24,6 +24,8 @@
 
 	<div>
 		<?php 
+		$start = gettimeofday();
+		
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
 			$queueArray = explode("¡¢", $queue);
@@ -42,6 +44,14 @@
 				$i +=1;
 			}
 		}
+		
+		$end = gettimeofday();
+		
+		$second = $end[sec]-$start[sec];
+		$msec = ($end[usec]-$start[usec])/1000000;
+		
+		echo "ÓÃÊ±".($second+$msec)."Ãë";
+		
 		?>
 
 	</div>
