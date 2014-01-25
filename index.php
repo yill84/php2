@@ -2,6 +2,7 @@
 <head>
 </head>
 <body>
+ver:1.0<br/>
 	<div>
 	<form action="result.php" method="get">
 		<p/>粘贴所有排队人员：<input name="queue" type="textarea"/> <br/>
