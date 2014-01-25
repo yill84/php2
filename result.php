@@ -7,7 +7,7 @@
 	$queue = $_GET["queue"];
 	$target = $_GET["target"];
 
-	$queueArray = strtok($queue, "、");
+	$queueArray = explode($queue, "、");
 	echo "没有去重的总人数是 ".count($queueArray)."人<br/>";
 
 	echo "没有去重search：".array_search($target, $queueArray);
@@ -41,10 +41,10 @@
 	}
 	$queueArrayNoDup;
 	} */
-
+/* 
 	echo "queueArray is ".$queueArray;
 	echo "<br/>";
-	echo "target is ".$target;
+	echo "target is ".$target; */
 
 
 	?>
