@@ -5,6 +5,7 @@
 	ver:1.0
 	<br />
 	<?php 
+	$start = gettimeofday();
 	$queue = trim($_POST["queue"]);
 	$target = trim($_POST["target"]);
 	?>
@@ -24,8 +25,6 @@
 
 	<div>
 		<?php 
-		$start = gettimeofday();
-		
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
 			$queueArray = explode("、", $queue);
@@ -48,9 +47,9 @@
 		$end = gettimeofday();
 		
 		$second = $end[sec]-$start[sec];
-		$msec = ($end[usec]-$start[usec])/1000000;
+		$usec = ($end[usec]-$start[usec])/1000000;
 		
-		echo "用时".($second+$msec)."秒";
+		echo "用时".($second+$usec)."秒";
 		
 		?>
 
