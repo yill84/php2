@@ -5,8 +5,10 @@
 	ver:1.0
 	<br />
 	<?php 
-	$queue = $_POST["queue"];
-	$target = $_POST["target"];
+	$queue = trim($_POST["queue"]);
+	$target = trim($_POST["target"]);
+	echo "queue is ".$queue;
+	echo "target is ".$target;
 	?>
 	<div>
 		<form action="index.php" method="post">
