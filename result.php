@@ -7,7 +7,7 @@
 	$queue = $_GET["queue"];
 	$target = $_GET["target"];
 
-	$queueArray = explode($queue, "、");
+	$queueArray = explode("、", $queue);
 	echo "没有去重的总人数是 ".count($queueArray)."人<br/>";
 
 	echo "没有去重search：".array_search($target, $queueArray);
@@ -29,6 +29,9 @@
 
 
 	/*
+	 * 中、中、国、国、人、好、样、的
+	 * 人
+	 * 
 	 foreach ($queueArray as $name)
 	 {
 	if(array_key_exist($name,$queueArrayNoDup))
