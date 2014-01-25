@@ -7,17 +7,12 @@
 	<?php 
 	$queue = trim($_POST["queue"]);
 	$target = trim($_POST["target"]);
-	echo "queue is ".$queue;
-	echo "target is ".$target;
-	$test = "test string";
 	?>
 	<div>
 		<form action="index.php" method="post">
 			<p />
 			粘贴所有排队人员：
-			<textarea rows="3" cols="50" name="queue">
-				<?php echo $queue?>
-			</textarea>
+			<textarea rows="3" cols="50" name="queue"><?php echo $queue?></textarea>
 			<br />
 			<p />
 			要查询序号的名称：<input name="target" type="text" value="<?php echo $test?>" />
@@ -29,8 +24,6 @@
 
 	<div>
 		<?php 
-		echo "test is ".$test;
-
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
 			$queueArray = explode("、", $queue);
