@@ -2,7 +2,7 @@
 <head>
 </head>
 <body>
-ver:1.1<br/>
+ver:1.2<br/>
 	<div>
 	<form action="result.php" method="get">
 		<p/>粘贴所有排队人员：<input name="queue" type="textarea"/> <br/>
@@ -11,8 +11,6 @@ ver:1.1<br/>
 		<p/><input type="submit" value="查询"/>
 	</form>
 	</div>
-
-
 	
 </body>
 </html>

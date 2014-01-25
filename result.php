@@ -3,16 +3,19 @@
 
 <body>
 
-<?php 
-$queue=$_GET["queue"];
-$target=$_GET["target"];
+	<?php 
+	$queue = $_GET["queue"];
+	$target = $_GET["target"];
 
-echo "queue is ".$queue;
-echo "<br/>";
-echo "target is ".$target;
+	$queueArray = strtok($queue, "¡¢");
+	
+	
+	echo "queueArray is ".$queueArray;
+	echo "<br/>";
+	echo "target is ".$target;
 
 
-?>
+	?>
 
 </body>
 
