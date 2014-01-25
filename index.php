@@ -29,6 +29,7 @@
 
 	<div>
 		<?php 
+		echo "test is ".$test;
 
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
