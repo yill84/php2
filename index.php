@@ -15,7 +15,7 @@
 			<textarea rows="3" cols="50" name="queue"><?php echo $queue?></textarea>
 			<br />
 			<p />
-			要查询序号的名称：<input name="target" type="text" value="<?php echo $test?>" />
+			要查询序号的名称：<input name="target" type="text" value="<?php echo $target?>" />
 			<br />
 			<p />
 			<input type="submit" value="查询" />
