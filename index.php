@@ -47,9 +47,9 @@
 		$end = gettimeofday();
 		
 		$second = $end[sec]-$start[sec];
-		$usec = ($end[usec]-$start[usec])/1000000;
+		$usec = ($end[usec]-$start[usec]);
 		
-		echo "用时".($second+$usec)."秒";
+		echo "用时".$second."秒".$usec."微秒";
 		
 		?>
 
