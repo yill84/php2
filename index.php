@@ -9,6 +9,7 @@
 	$target = trim($_POST["target"]);
 	echo "queue is ".$queue;
 	echo "target is ".$target;
+	$test = "test string";
 	?>
 	<div>
 		<form action="index.php" method="post">
@@ -19,7 +20,7 @@
 			</textarea>
 			<br />
 			<p />
-			要查询序号的名称：<input name="target" type="text" value="<?php $target?>" />
+			要查询序号的名称：<input name="target" type="text" value="<?php $test?>" />
 			<br />
 			<p />
 			<input type="submit" value="查询" />
