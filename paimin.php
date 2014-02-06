@@ -16,7 +16,7 @@
 	$start = gettimeofday();
 	
 	//$queue = $response;//trim($_POST["queue"]);
-	$queue = "<P style=\"TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan\" class=MsoNormal align=left></SPAN><SPAN style=\"LINE-HEIGHT: 160%; FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体\"><FONT face=\"Times New Roman\">田浩琳、何灵曦、郑博文、梁昊祺、戴子杰、林友超、焦子礡、李亮辉、孟令轩、刘金、林克轩、张文钦、曾俊豪、侯文斌、麦兜、杨羿、张天钺、<BR><BR></FONT></SPAN></P>";
+	$queue = "<P style="."\""."TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan"."\""." class=MsoNormal align=left></SPAN><SPAN style="."\""."LINE-HEIGHT: 160%; FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"."\""."><FONT face="."\""."Times New Roman"."\"".">田浩琳、何灵曦、郑博文、梁昊祺、戴子杰、林友超、焦子礡、李亮辉、孟令轩、刘金、林克轩、张文钦、曾俊豪、侯文斌、麦兜、杨羿、张天钺、<BR><BR></FONT></SPAN></P>";
 	
 	echo $queue;
 	$queueArray = explode("、", $queue);
