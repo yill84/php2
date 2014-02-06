@@ -34,7 +34,7 @@
 		</div>
 		
 		<div>
-				年华收益率(%)：<?php echo $nianhua * 100?>
+				年华收益率(%)：<?php echo $nianhua * 100?><br/>
 				收益：<?php echo $shouyi1?>
 		</div>
 	</body>
