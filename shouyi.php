@@ -8,17 +8,17 @@
 			$shouyi = $_POST["shouyi"];
 			$benjin = $_POST["benjin"];
 			$day = $_POST["day"];
-			$nianhua1 = $_POST["nianhua1"];
+			$nianhua1 = $_POST["nianhua1"] / 100;
 			
 			$year = 365;
 			if(0 != strcasecmp("",$shouyi) && 0 != strcasecmp("",$benjin)&& 0 != strcasecmp("",$day))
 			{
-				$nianhua = ($shouyi * $year * 100)/($benjin * $day) ;
+				$nianhua = ($shouyi * $year)/($benjin * $day) ;
 			}
 			
 			if(0 != strcasecmp("",$nianhua1) && 0 != strcasecmp("",$benjin)&& 0 != strcasecmp("",$day))
 			{
-				$shouyi1 = ($nianhua1 * $benjin * $day)/($year * 100);
+				$shouyi1 = ($nianhua1 * $benjin * $day)/($year);
 			}
 		?>
 		
@@ -34,7 +34,7 @@
 		</div>
 		
 		<div>
-				年华收益率(%)：<?php echo $nianhua?>
+				年华收益率(%)：<?php echo $nianhua * 100?>
 				收益：<?php echo $shouyi1?>
 		</div>
 	</body>
