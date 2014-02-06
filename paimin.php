@@ -15,7 +15,7 @@
 	*/
 	$start = gettimeofday();
 
-	$file1 = fopen("paidui.php","r");
+	$file1 = trim(file_get_contents(fopen("paidui.php","r")));
 	echo "file1 is ".$file1."<br/>";
 	
 	$file = fopen("http://www.elimautism.org/news_content4.asp?id=119","r");
