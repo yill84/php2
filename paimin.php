@@ -15,8 +15,10 @@
 	*/
 	$start = gettimeofday();
 
-	$ori = trim(file_get_contents(fopen("http://www.elimautism.org/news_content4.asp?id=119")));
-	
+	$file = fopen("http://www.elimautism.org/news_content4.asp?id=119");
+	echo "file is ".$file;
+	$ori = trim(file_get_contents($file));
+	echo "ori is ".$ori;
 	$queueArray = explode("、", $ori);
 
 	echo "原始队列：";
