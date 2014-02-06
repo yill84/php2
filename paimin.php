@@ -15,8 +15,9 @@
 	*/
 	$start = gettimeofday();
 
-	$queue = trim($_POST["queue"]);
-	$queueArray = explode("、", $queue);
+	$ori = trim(file_get_contents("http://www.elimautism.org/news_content4.asp?id=119"));
+	
+	$queueArray = explode("、", $ori);
 
 	echo "原始队列：";
 	print_r ($queueArray);
@@ -36,6 +37,8 @@
 	echo "修正队列：";
 	print_r ($queueArray);
 	echo "<br/>";
+	
+	$queue = implode("、",$queueArray);
 
 	$target = trim($_POST["target"]);
 
