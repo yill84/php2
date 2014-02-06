@@ -4,25 +4,30 @@
 //收益=(年华收益率×本金×天数)/一年天数
 //年华收益率=(收益×一年天数)/(本金×天数)
 
-$shouyi=$_POST("shouyi");
-$benjin=$_POST("benjin");;
-$day=$_POST("day");;
+$shouyi = $_POST("shouyi");
+$benjin = $_POST("benjin");
+$day = $_POST("day");
 
-$year=365;
-$nianhua;
+$year = 365;
+$nianhua = 0;
+if(0 != strcasecmp("",$shouyi) && 0 != strcasecmp("",$benjin)&& 0 != strcasecmp("",$day))
+{
+	$nianhua = ($shouyi * $year)/($benjin * $day);
+}
+
 
 ?>
 
 <div>
-	<form action="shouyi.php" method="POST">
-		本金：<input type="text" value="<?php echo $benjin;?>"/><br/>
-		天数：<input type="text" value="<?php echo $day;?>"/><br/>
-		收益：<input type="text" value="<?php echo $shouyi;?>"/><br/>
+	<form action="shouyi.php" method="post">
+		本金：<input type="text" value="<?php echo $benjin?>"/><br/>
+		天数：<input type="text" value="<?php echo $day?>"/><br/>
+		收益：<input type="text" value="<?php echo $shouyi?>"/><br/>
 		
-		<input type="submit" value="计算"/>		
+		<input type="submit" value="计算年化收益率"/>		
 	</form>
 </div>
 
 <div>
-		年华收益率：<?php echo $nianhua;?>
+		年华收益率：<?php echo $nianhua?>
 </div>
