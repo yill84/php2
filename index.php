@@ -9,40 +9,40 @@
 	//http://www.elimautism.org/news_content4.asp?id=119
 	/*
 	 * 
-<P style="TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class=MsoNormal align=left></SPAN><SPAN style="LINE-HEIGHT: 160%; FONT-FAMILY: ËÎÌå; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: ËÎÌå"><FONT face="Times New Roman">ÌïºÆÁÕ¡¢
+<P style="TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class=MsoNormal align=left></SPAN><SPAN style="LINE-HEIGHT: 160%; FONT-FAMILY: ï¿½ï¿½ï¿½ï¿½; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: ï¿½ï¿½ï¿½ï¿½"><FONT face="Times New Roman">ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½
 	 */
 	$start = gettimeofday();
 	
 	$queue = $response;//trim($_POST["queue"]);
-	$queueArray = explode("¡¢", $queue);
+	$queueArray = explode("ï¿½ï¿½", $queue);
 	
-	//È¡arrayµÚÒ»¸ö
+	//È¡arrayï¿½ï¿½Ò»ï¿½ï¿½
 	$firstName = $queueArray[0];
 	$lastSplit = strrchr($firstName,">");
 	$firstName = substr($lastSplit,1);
 	$queueArray[0] = $firstName;
 	
-	//È¡array×îºóÒ»¸ö
+	//È¡arrayï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	$lastName = array_pop($queueArray);
 	$firstSplit = stripos($lastName,"<");
 	$lastName = substr($lastName,0,length);
 				
 	$target = trim($_POST["target"]);
 	
-	$last = strrpos($response,"¡¢");
+	$last = strrpos($response,"ï¿½ï¿½");
 	
 	?>
 	<div>
 		<form action="index.php" method="post">
 			<p />
-			Õ³ÌùËùÓĞÅÅ¶ÓÈËÔ±£º
+			æ’é˜Ÿï¼š
 			<textarea rows="3" cols="50" name="queue"><?php echo $queue?></textarea>
 			<br />
 			<p />
-			Òª²éÑ¯ĞòºÅµÄÃû³Æ£º<input name="target" type="text" value="<?php echo $target?>" />
+			Òªï¿½ï¿½Ñ¯ï¿½ï¿½Åµï¿½ï¿½ï¿½Æ£ï¿½<input name="target" type="text" value="<?php echo $target?>" />
 			<br />
 			<p />
-			<input type="submit" value="²éÑ¯" />
+			<input type="submit" value="ï¿½ï¿½Ñ¯" />
 		</form>
 	</div>
 
@@ -51,17 +51,17 @@
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
 			
-			echo "Ã»ÓĞÈ¥ÖØµÄ×ÜÈËÊıÊÇ".count($queueArray)."ÈË<br/>";
+			echo "Ã»ï¿½ï¿½È¥ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½".count($queueArray)."ï¿½ï¿½<br/>";
 
 			$queueArrayNoDup = array_unique($queueArray);
-			echo "È¥ÖØµÄ×ÜÈËÊıÊÇ".count($queueArrayNoDup)."ÈË<br/>";
+			echo "È¥ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½".count($queueArrayNoDup)."ï¿½ï¿½<br/>";
 
 			$i=1;
 			foreach ($queueArrayNoDup as $name)
 			{
 				if(0 == strcasecmp($target, $name))
 				{
-					echo "\"".$target."\"ÅÅÔÚµÚ".$i."Î»<br/>";
+					echo "\"".$target."\"ï¿½ï¿½ï¿½Úµï¿½".$i."Î»<br/>";
 				}
 				$i +=1;
 			}
@@ -72,7 +72,7 @@
 		$second = $end[sec]-$start[sec];
 		$usec = ($end[usec]-$start[usec]);
 		
-		echo "ÓÃÊ±".$second."Ãë".$usec."Î¢Ãë";
+		echo "ï¿½ï¿½Ê±".$second."ï¿½ï¿½".$usec."Î¢ï¿½ï¿½";
 		
 		?>
 

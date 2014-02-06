@@ -1,14 +1,10 @@
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
 		ver:1.0
 		<?php 
-		//Äê»¯ÊÕÒæÂÊ=Ò»ÄêÊÕÒæ/±¾½ð¡Á100%
-		//Ò»ÄêÌìÊý=365
-		//ÊÕÒæ=(Äê»ªÊÕÒæÂÊ¡Á±¾½ð¡ÁÌìÊý)/Ò»ÄêÌìÊý
-		//Äê»ªÊÕÒæÂÊ=(ÊÕÒæ¡ÁÒ»ÄêÌìÊý)/(±¾½ð¡ÁÌìÊý)
-		
 		$shouyi = $_POST["shouyi"];
 		$benjin = $_POST["benjin"];
 		$day = $_POST["day"];
@@ -23,16 +19,16 @@
 		
 		<div>
 			<form action="shouyi.php" method="post">
-				±¾½ð£º<input type="text" name="benjin" value="<?php echo $benjin?>"/><br/>
-				ÌìÊý£º<input type="text" name="day" value="<?php echo $day?>"/><br/>
-				ÊÕÒæ£º<input type="text" name="shouyi" value="<?php echo $shouyi?>"/><br/>
+				æœ¬é‡‘ï¼š<input type="text" name="benjin" value="<?php echo $benjin?>"/><br/>
+				å¤©æ•°ï¼š<input type="text" name="day" value="<?php echo $day?>"/><br/>
+				æ”¶ç›Šï¼š<input type="text" name="shouyi" value="<?php echo $shouyi?>"/><br/>
 				
-				<input type="submit" value="¼ÆËãÄê»¯ÊÕÒæÂÊ"/>		
+				<input type="submit" value="ï¿½ï¿½ï¿½ï¿½ï¿½ê»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"/>		
 			</form>
 		</div>
 		
 		<div>
-				Äê»ªÊÕÒæÂÊ£º<?php echo $nianhua?>
+				å¹´åŽæ”¶ç›ŠçŽ‡ï¼š<?php echo $nianhua?>
 		</div>
 	</body>
 </html>
