@@ -51,7 +51,7 @@
 			<form name="shouyi" action="shouyi.php" method="post">
 				本金：<input type="text" name="benjin1" value="<?php echo $benjin1?>"/><br/>
 				天数：<input type="text" name="day1" value="<?php echo $day1?>"/><br/>
-				年华收益率：<input type="text" name="shouyi1" value="<?php echo $nianhua1?>"/><br/>
+				年华收益率：<input type="text" name="nianhua1" value="<?php echo $nianhua1?>"/><br/>
 				
 				<input type="submit" value="计算"/>		
 			</form>
