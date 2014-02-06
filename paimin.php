@@ -46,7 +46,7 @@
 	
 	?>
 	<div>
-		<form action="index.php" method="post">
+		<form action="paimin.php" method="post">
 			<p />
 			排队：
 			<textarea rows="3" cols="50" name="queue"><?php echo $queue?></textarea>
