@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <?php 
 //年化收益率=一年收益/本金×100%
 //一年天数=365
@@ -29,3 +33,5 @@ if(0 != strcasecmp("",$shouyi) && 0 != strcasecmp("",$benjin)&& 0 != strcasecmp(
 <div>
 		年华收益率：<?php echo $nianhua?>
 </div>
+</body>
+</html>
