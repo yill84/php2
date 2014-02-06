@@ -14,15 +14,13 @@ if(0 != strcasecmp("",$shouyi) && 0 != strcasecmp("",$benjin)&& 0 != strcasecmp(
 {
 	$nianhua = ($shouyi * $year)/($benjin * $day);
 }
-
-
 ?>
 
 <div>
 	<form action="shouyi.php" method="post">
-		本金：<input type="text" value="<?php echo $benjin?>"/><br/>
-		天数：<input type="text" value="<?php echo $day?>"/><br/>
-		收益：<input type="text" value="<?php echo $shouyi?>"/><br/>
+		本金：<input type="text" name="benjin" value="<?php echo $benjin?>"/><br/>
+		天数：<input type="text" name="day" value="<?php echo $day?>"/><br/>
+		收益：<input type="text" name="shouyi" value="<?php echo $shouyi?>"/><br/>
 		
 		<input type="submit" value="计算年化收益率"/>		
 	</form>
