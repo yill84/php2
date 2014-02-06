@@ -90,6 +90,7 @@
 
 	<script type="text/javascript">
 	var xmlHttp;
+	var xmlHttp1;
 	
 	function update()
 	{
@@ -105,15 +106,34 @@
 		xmlHttp.send(null);
 	}
 
-	function stateChanged() 
+	function stateChanged()
 	{ 
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
 	 { 
-		 alert(xmlHttp.responseText );
-	 	document.getElementById("queue").innerHTML=xmlHttp.responseText ;
+
+		xmlHttp1=GetXmlHttpObject();
+		if (xmlHttp1==null)
+		  {
+		  alert ("Browser does not support HTTP Request");
+		  return;
+		  } 
+		var url="paidui.php";
+		var query = "ori=" + xmlHttp.responseText;
+		xmlHttp1.onreadystatechange=stateChanged1 ;
+		xmlHttp1.open("POST",url,true);
+		xmlHttp1.send(query);
 	 } 
 	}
 
+	function stateChanged1()
+	{ 
+	if (xmlHttp1.readyState==4 || xmlHttp1.readyState=="complete")
+	 { 
+		alert("respone="+xmlHttp1.responseText);
+	 	document.getElementById("queue").innerHTML=xmlHttp1.responseText ;
+	 } 
+	}
+	
 	function GetXmlHttpObject()
 	{
 	var xmlHttp=null;
