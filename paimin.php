@@ -15,13 +15,13 @@
 	*/
 	$start = gettimeofday();
 
-	$file1 = trim(file_get_contents(fopen("paidui.php","r")));
-	echo "file1 is ".$file1."<br/>";
-	
-	$file = fopen("http://www.elimautism.org/news_content4.asp?id=119","r");
-	echo "file is ".$file."<br/>";
-	$ori = trim(file_get_contents($file));
-	echo "ori is ".$ori."<br/>";
+	$url = "http://www.elimautism.org/news_content4.asp?id=119";
+	echo "fopen:".fopen($url,"rb");
+	echo "file:".file($url);
+	echo "file_get_contents():".file_get_contents($url);
+	echo "fgets:".fgets($url);
+	echo "fread:".fread($url);
+	echo "fread.fopen:".fread(fopen($url,"rb"));
 	
 	$queueArray = explode("、", $ori);
 
