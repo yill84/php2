@@ -111,6 +111,7 @@
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
 	 { 
 		alert("ori="+xmlHttp.responseText);
+		alert("oriXml="+xmlHttp.responseXml);
 		xmlHttp1=GetXmlHttpObject();
 		if (xmlHttp1==null)
 		  {
