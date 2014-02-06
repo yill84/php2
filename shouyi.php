@@ -27,7 +27,7 @@
 				本金：<input type="text" name="benjin" value="<?php echo $benjin?>"/><br/>
 				天数：<input type="text" name="day" value="<?php echo $day?>"/><br/>
 				收益：<input type="text" name="shouyi" value="<?php echo $shouyi?>"/><br/>
-				年华收益率(%)：<input type="text" name="nianhua1" value="<?php echo $nianhua1?>"/><br/>
+				年华收益率(%)：<input type="text" name="nianhua1" value="<?php echo $nianhua1*100?>"/><br/>
 				
 				<input type="submit" value="计算"/>
 			</form>
