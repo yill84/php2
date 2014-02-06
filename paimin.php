@@ -32,7 +32,7 @@
 	$lastName = array_pop($queueArray);
 	$firstSplit = stripos($lastName,"<");
 	$lastName = substr($lastName,0,$firstSplit);
-	array_push($queueArray,$firstName);
+	array_push($queueArray,$lastName);
 
 	echo "修正队列：";
 	print_r ($queueArray);
