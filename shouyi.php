@@ -4,9 +4,9 @@
 //收益=(年华收益率×本金×天数)/一年天数
 //年华收益率=(收益×一年天数)/(本金×天数)
 
-$shouyi = $_POST("shouyi");
-$benjin = $_POST("benjin");
-$day = $_POST("day");
+$shouyi = $_POST["shouyi"];
+$benjin = $_POST["benjin"];
+$day = $_POST["day"];
 
 $year = 365;
 $nianhua = 0;
