@@ -3,7 +3,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
+		<a href="index.php">回首页</a>
 		ver:1.0
+		
 		<?php 
 			$shouyi = $_POST["shouyi"];
 			$benjin = $_POST["benjin"];
