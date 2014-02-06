@@ -15,7 +15,7 @@
 	*/
 	$start = gettimeofday();
 
-	$ori = trim(file_get_contents("http://www.elimautism.org/news_content4.asp?id=119"));
+	$ori = trim(file_get_contents(fopen("http://www.elimautism.org/news_content4.asp?id=119")));
 	
 	$queueArray = explode("、", $ori);
 
