@@ -3,20 +3,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-<a href="index.php">回首页</a>
+<a href="index.php">回首页</a><br/>
 	ver:1.0
 	<br />
 	<?php 
 	//http://www.elimautism.org/news_content4.asp?id=119
 	/*
 	 * 
-<P style="TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class=MsoNormal align=left></SPAN><SPAN style="LINE-HEIGHT: 160%; FONT-FAMILY: ����; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: ����"><FONT face="Times New Roman">����ա�
+
+<P style="TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class=MsoNormal align=left></SPAN><SPAN style="LINE-HEIGHT: 160%; FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT face="Times New Roman">田浩琳、何灵曦、郑博文、梁昊祺、戴子杰、林友超、焦子礡、李亮辉、孟令轩、刘金、林克轩、张文钦、曾俊豪、侯文斌、麦兜、杨羿、张天钺、<BR><BR></FONT></SPAN></P>
 	 */
 	$start = gettimeofday();
 	
-	$queue = $response;//trim($_POST["queue"]);
-	$queueArray = explode("��", $queue);
+	//$queue = $response;//trim($_POST["queue"]);
+	$queue = "<P style=\"TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan\" class=MsoNormal align=left></SPAN><SPAN style=\"LINE-HEIGHT: 160%; FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体\"><FONT face=\"Times New Roman\">田浩琳、何灵曦、郑博文、梁昊祺、戴子杰、林友超、焦子礡、李亮辉、孟令轩、刘金、林克轩、张文钦、曾俊豪、侯文斌、麦兜、杨羿、张天钺、<BR><BR></FONT></SPAN></P>";
+	$queueArray = explode("、", $queue);
 	
+	echo "原始队列：".$queueArray."<br/>";
 	//ȡarray��һ��
 	$firstName = $queueArray[0];
 	$lastSplit = strrchr($firstName,">");
@@ -26,11 +29,14 @@
 	//ȡarray���һ��
 	$lastName = array_pop($queueArray);
 	$firstSplit = stripos($lastName,"<");
-	$lastName = substr($lastName,0,length);
-				
+	$lastName = substr($lastName,0,$firstSplit);
+	array_push($queueArray,$firstName);
+
+	echo "修正队列：".$queueArray."<br/>";
+	
 	$target = trim($_POST["target"]);
 	
-	$last = strrpos($response,"��");
+	//$last = strrpos($response,"、");
 	
 	?>
 	<div>
@@ -51,7 +57,6 @@
 		<?php 
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
-			
 			echo "未去重人数".count($queueArray)."人<br/>";
 
 			$queueArrayNoDup = array_unique($queueArray);

@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
-		<a href="index.php">回首页</a>
+		<a href="index.php">回首页</a><br/>
 		ver:1.0
 		
 		<?php 
