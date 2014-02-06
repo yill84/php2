@@ -35,7 +35,7 @@
 		
 		计算收益：
 		<?php 
-		$shouyi1 = $_POST["nianhua1"];
+		$nianhua1 = $_POST["nianhua1"];
 		$benjin1 = $_POST["benjin1"];
 		$day1 = $_POST["day1"];
 		
