@@ -103,14 +103,14 @@
 		var url="http://www.elimautism.org/news_content4.asp?id=119";
 		xmlHttp.onreadystatechange=stateChanged ;
 		xmlHttp.open("GET",url,true);
-		xmlHttp.send(null);
+		xmlHttp.send();
 	}
 
 	function stateChanged()
 	{ 
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
 	 { 
-		 alert("ori="+xmlHttp.responseText);
+		alert("ori="+xmlHttp.responseText);
 		xmlHttp1=GetXmlHttpObject();
 		if (xmlHttp1==null)
 		  {
