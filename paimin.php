@@ -110,7 +110,7 @@
 	{ 
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
 	 { 
-
+		 alert("ori="+xmlHttp.responseText);
 		xmlHttp1=GetXmlHttpObject();
 		if (xmlHttp1==null)
 		  {
