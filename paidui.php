@@ -1,5 +1,6 @@
 <?php 
-$queue = trim($_POST["ori"]);
+echo "hello world";
+/* $queue = trim($_POST["ori"]);
 $queueArray = explode("、", $queue);
 
 //ȡarray��һ��
@@ -14,6 +15,6 @@ $firstSplit = stripos($lastName,"<");
 $lastName = substr($lastName,0,$firstSplit);
 array_push($queueArray,$lastName);
 
-echo implode("、",$queueArray);
+echo implode("、",$queueArray); */
 
 ?>
