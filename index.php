@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 	ver:1.0
@@ -39,10 +40,10 @@
 			<textarea rows="3" cols="50" name="queue"><?php echo $queue?></textarea>
 			<br />
 			<p />
-			Ҫ��ѯ��ŵ���ƣ�<input name="target" type="text" value="<?php echo $target?>" />
+			姓名：<input name="target" type="text" value="<?php echo $target?>" />
 			<br />
 			<p />
-			<input type="submit" value="��ѯ" />
+			<input type="submit" value="查询" />
 		</form>
 	</div>
 
@@ -51,17 +52,17 @@
 		if(0 != strcasecmp("",$queue) && 0 != strcasecmp("",$target))
 		{
 			
-			echo "û��ȥ�ص���������".count($queueArray)."��<br/>";
+			echo "未去重人数".count($queueArray)."人<br/>";
 
 			$queueArrayNoDup = array_unique($queueArray);
-			echo "ȥ�ص���������".count($queueArrayNoDup)."��<br/>";
+			echo "去重人数".count($queueArrayNoDup)."人<br/>";
 
 			$i=1;
 			foreach ($queueArrayNoDup as $name)
 			{
 				if(0 == strcasecmp($target, $name))
 				{
-					echo "\"".$target."\"���ڵ�".$i."λ<br/>";
+					echo "\"".$target."\"排在第".$i."位<br/>";
 				}
 				$i +=1;
 			}
@@ -72,7 +73,7 @@
 		$second = $end[sec]-$start[sec];
 		$usec = ($end[usec]-$start[usec]);
 		
-		echo "��ʱ".$second."��".$usec."΢��";
+		echo "耗时".$second."秒".$usec."微秒";
 		
 		?>
 

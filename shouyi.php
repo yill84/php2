@@ -23,7 +23,7 @@
 				天数：<input type="text" name="day" value="<?php echo $day?>"/><br/>
 				收益：<input type="text" name="shouyi" value="<?php echo $shouyi?>"/><br/>
 				
-				<input type="submit" value="�����껯������"/>		
+				<input type="submit" value="计算"/>		
 			</form>
 		</div>
 		
