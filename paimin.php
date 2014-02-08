@@ -7,68 +7,61 @@
 	<br /> ver:1.0
 	<br />
 	<?php 
-	//http://www.elimautism.org/news_content4.asp?id=119
-	/*
-	 *
+	$target = "";
+	$queue = "";
+	$target = trim(@$_POST["target"]);
+	$queue = trim(@$_POST["queue"]);
+	$queueArray=array();
+		
+	if(empty($queue))
+	{
+		$url = "http://www.elimautism.org/news_content4.asp?id=119";
+		$proxy = "proxy.huawei.com:8080";
+		$userpwd = "h00255794:Yyyy123+";
 
-	<P style="TEXT-ALIGN: left; LINE-HEIGHT: 160%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class=MsoNormal align=left></SPAN><SPAN style="LINE-HEIGHT: 160%; FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT face="Times New Roman">田浩琳、何灵曦、郑博文、梁昊祺、戴子杰、林友超、焦子礡、李亮辉、孟令轩、刘金、林克轩、张文钦、曾俊豪、侯文斌、麦兜、杨羿、张天钺、<BR><BR></FONT></SPAN></P>
-	*/
-	$start = gettimeofday();
+		$ch = curl_init();
 
-	$url = "http://www.elimautism.org/news_content4.asp?id=119";
-	//$proxy = "proxy.huawei.com:8080";
-	//$userpwd = "h00255794:Yyyy123+";
+		curl_setopt($ch, CURLOPT_URL,$url);
+		curl_setopt($ch, CURLOPT_PROXY, $proxy);
+		curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
+		curl_setopt($ch, CURLOPT_REFERER, "http://www.baidu.com");
+		curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36");
+		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		//curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$response = curl_exec($ch);
+		$ori = mb_convert_encoding($response,"UTF-8","gbk");
+		curl_close($ch);
 	
-	$ch = curl_init();
+		$queueArray = explode("、", $ori);
 	
-	curl_setopt($ch, CURLOPT_URL,$url);
-	//curl_setopt($ch, CURLOPT_PROXY, $proxy);
-	//curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
-	curl_setopt($ch, CURLOPT_REFERER, "http://www.baidu.com");
-	curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36");
-	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-	//curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	
-	$ori = curl_exec($ch);
-	curl_close($ch);
-	
-	$queueArray = explode("、", $ori);
+		//删除第一个名字前的html标记
+		$firstName = $queueArray[0];
+		$lastSplit = strrchr($firstName,">");
+		$firstName = substr($lastSplit,1);
+		$queueArray[0] = $firstName;
 
-	echo "原始队列：";
-	print_r ($queueArray);
-	echo "<br/>";
-	//ȡarray��һ��
-	$firstName = $queueArray[0];
-	$lastSplit = strrchr($firstName,">");
-	$firstName = substr($lastSplit,1);
-	$queueArray[0] = $firstName;
+		//删除最后一个名字后的html标记
+		$lastName = array_pop($queueArray);
+		$firstSplit = stripos($lastName,"<");
+		$lastName = substr($lastName,0,$firstSplit);
+		array_push($queueArray,$lastName);
 
-	//ȡarray���һ��
-	$lastName = array_pop($queueArray);
-	$firstSplit = stripos($lastName,"<");
-	$lastName = substr($lastName,0,$firstSplit);
-	array_push($queueArray,$lastName);
-
-	echo "修正队列：";
-	print_r ($queueArray);
-	echo "<br/>";
-	
-	$queue = implode("、",$queueArray);
-
-	$target = trim($_POST["target"]);
-
-	//$last = strrpos($response,"、");
+		$queue = trim(implode("、",$queueArray));
+	}
+	else
+	{
+		$queueArray = explode("、", $queue);
+	}
 
 	?>
 	<div>
 		<form action="paimin.php" method="post">
 			<p />
 			排队：
-			<textarea rows="3" cols="50" id="queue" name="queue">
-				<?php echo $queue?>
-			</textarea>
-			<input type="button" onclick="update()" value="更新" /> <br />
+			<textarea rows="30" cols="100" id="queue" name="queue"><?php echo $queue?></textarea>
+			
 			<p />
 			姓名：<input name="target" type="text" value="<?php echo $target?>" /> <br />
 			<p />
@@ -95,89 +88,8 @@
 				$i +=1;
 			}
 		}
-
-		$end = gettimeofday();
-
-		$second = $end[sec]-$start[sec];
-		$usec = ($end[usec]-$start[usec]);
-
-		echo "耗时".$second."秒".$usec."微秒";
-
 		?>
 
 	</div>
-
-	<script type="text/javascript">
-	var xmlHttp;
-	var xmlHttp1;
-	
-	function update()
-	{
-		xmlHttp=GetXmlHttpObject();
-		if (xmlHttp==null)
-		  {
-		  alert ("Browser does not support HTTP Request");
-		  return;
-		  } 
-		var url="http://www.elimautism.org/news_content4.asp?id=119";
-		xmlHttp.onreadystatechange=stateChanged ;
-		xmlHttp.open("GET",url,true);
-		xmlHttp.send();
-	}
-
-	function stateChanged()
-	{ 
-	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
-	 { 
-		alert("ori="+xmlHttp.responseText);
-		alert("oriXml="+xmlHttp.responseXML);
-		xmlHttp1=GetXmlHttpObject();
-		if (xmlHttp1==null)
-		  {
-		  alert ("Browser does not support HTTP Request");
-		  return;
-		  } 
-		var url="paidui.php";
-		var query = "ori=" + xmlHttp.responseText;
-		xmlHttp1.onreadystatechange=stateChanged1 ;
-		xmlHttp1.open("POST",url,true);
-		xmlHttp1.send(query);
-	 } 
-	}
-
-	function stateChanged1()
-	{ 
-	if (xmlHttp1.readyState==4 || xmlHttp1.readyState=="complete")
-	 { 
-		alert("respone="+xmlHttp1.responseText);
-	 	document.getElementById("queue").innerHTML=xmlHttp1.responseText ;
-	 } 
-	}
-	
-	function GetXmlHttpObject()
-	{
-	var xmlHttp=null;
-	try
-	 {
-	 // Firefox, Opera 8.0+, Safari
-	 xmlHttp=new XMLHttpRequest();
-	 }
-	catch (e)
-	 {
-	 // Internet Explorer
-	 try
-	  {
-	  xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-	  }
-	 catch (e)
-	  {
-	  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	 }
-	return xmlHttp;
-	}
-	
-	</script>
-
 </body>
 </html>
