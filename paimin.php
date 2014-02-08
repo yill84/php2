@@ -16,12 +16,22 @@
 	$start = gettimeofday();
 
 	$url = "http://www.elimautism.org/news_content4.asp?id=119";
-	echo "fopen:".fopen($url,"rb");
-	echo "file:".file($url);
-	echo "file_get_contents():".file_get_contents($url);
-	echo "fgets.fopen:".fgets(fopen($url,"rb"));
-	echo "fread:".fread($url,1024);
-	echo "fread.fopen:".fread(fopen($url,"rb"),1024);
+	//$proxy = "proxy.huawei.com:8080";
+	//$userpwd = "h00255794:Yyyy123+";
+	
+	$ch = curl_init();
+	
+	curl_setopt($ch, CURLOPT_URL,$url);
+	//curl_setopt($ch, CURLOPT_PROXY, $proxy);
+	//curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
+	curl_setopt($ch, CURLOPT_REFERER, "http://www.baidu.com");
+	curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36");
+	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+	//curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	
+	$ori = curl_exec($ch);
+	curl_close($ch);
 	
 	$queueArray = explode("、", $ori);
 
