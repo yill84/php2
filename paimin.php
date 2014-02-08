@@ -16,14 +16,14 @@
 	if(empty($queue))
 	{
 		$url = "http://www.elimautism.org/news_content4.asp?id=119";
-		$proxy = "proxy.huawei.com:8080";
-		$userpwd = "h00255794:Yyyy123+";
+		//$proxy = "proxy.huawei.com:8080";
+		//$userpwd = "h00255794:Yyyy123+";
 
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL,$url);
-		curl_setopt($ch, CURLOPT_PROXY, $proxy);
-		curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
+		//curl_setopt($ch, CURLOPT_PROXY, $proxy);
+		//curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
 		curl_setopt($ch, CURLOPT_REFERER, "http://www.baidu.com");
 		curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36");
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
