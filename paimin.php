@@ -24,7 +24,7 @@
 		curl_setopt($ch, CURLOPT_URL,$url);
 		//curl_setopt($ch, CURLOPT_PROXY, $proxy);
 		//curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpwd);
-		curl_setopt($ch, CURLOPT_REFERER, "http://www.baidu.com");
+		curl_setopt($ch, CURLOPT_REFERER, "http://ps.sturgeon.mopaas.com/paimin.php");
 		curl_setopt($ch, CURLOPT_USERAGENT,"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36");
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 		//curl_setopt($ch, CURLINFO_HEADER_OUT, true);
@@ -83,7 +83,7 @@
 			{
 				if(0 == strcasecmp($target, $name))
 				{
-					echo "\"".$target."\"排在第".$i."位<br/>";
+					echo "<font color='red'>\"".$target."\"排在第".$i."位</font><br/>";
 				}
 				$i +=1;
 			}
