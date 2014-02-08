@@ -19,9 +19,9 @@
 	echo "fopen:".fopen($url,"rb");
 	echo "file:".file($url);
 	echo "file_get_contents():".file_get_contents($url);
-	echo "fgets:".fgets($url);
-	echo "fread:".fread($url);
-	echo "fread.fopen:".fread(fopen($url,"rb"));
+	echo "fgets.fopen:".fgets(fopen($url,"rb"));
+	echo "fread:".fread($url,1024);
+	echo "fread.fopen:".fread(fopen($url,"rb"),1024);
 	
 	$queueArray = explode("、", $ori);
 
