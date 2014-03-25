@@ -63,7 +63,7 @@
 			<textarea rows="30" cols="100" id="queue" name="queue"><?php echo $queue?></textarea>
 			
 			<p />
-			姓名：<input name="target" type="text" value="<?php if($target == "") {$target="何哲南"}; echo $target?>" /> <br />
+			姓名：<input name="target" type="text" value="<?php if(0==strlen($target)) {$target="何哲南"}; echo $target?>" /> <br />
 			<p />
 			<input type="submit" value="查询" />
 		</form>
