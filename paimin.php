@@ -54,7 +54,11 @@
 	{
 		$queueArray = explode("、", $queue);
 	}
-
+ 	
+ 	if(0==strlen($target)) 
+ 	{
+ 		$target="何哲南";
+ 	} 
 	?>
 	<div>
 		<form action="paimin.php" method="post">
