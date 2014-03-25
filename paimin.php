@@ -7,7 +7,7 @@
 	<br /> ver:1.0
 	<br />
 	<?php 
-	$target = "";
+	$target = "何哲南";
 	$queue = "";
 	$target = trim(@$_POST["target"]);
 	$queue = trim(@$_POST["queue"]);
