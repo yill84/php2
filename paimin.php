@@ -16,8 +16,6 @@
 	if(empty($queue))
 	{
 		$url = "http://www.elimautism.org/news_content4.asp?id=119";
-		//$proxy = "proxy.huawei.com:8080";
-		//$userpwd = "h00255794:Yyyy123+";
 
 		$ch = curl_init();
 
